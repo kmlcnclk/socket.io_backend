@@ -7,7 +7,7 @@ const cors = require('cors');
 const io = new Server(server, {
   cors: { origin: '*' },
 });
-
+const PORT = process.env.PORT || 5000;
 app.use(cors());
 
 app.get('/', (req, res) => {
@@ -24,6 +24,6 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(5000, () => {
+server.listen(PORT, () => {
   console.log('listening on *:5000');
 });
